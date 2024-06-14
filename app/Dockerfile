@@ -6,7 +6,7 @@ RUN pip install --upgrade pip
 RUN pip install flask
 COPY app.py /usr/src/app/
 
-ENV TARGET="hermes"
+ENV TARGET="hermes-ch"
 
 EXPOSE 8883
 

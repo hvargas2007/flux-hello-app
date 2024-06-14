@@ -15,7 +15,7 @@ images:
 
 configMapGenerator:
 - literals:
-  - TARGET=JManzur
+  - TARGET=hermes-ch
   name: hello-app-cm
 
 labels:
