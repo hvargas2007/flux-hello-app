@@ -10,7 +10,7 @@ nameSuffix: -dev
 images:
 - name: jmanzur/hello-app:latest
   newName: 540551285630.dkr.ecr.us-east-1.amazonaws.com/hello-app
-  newTag: v1
+  newTag: v2
 
 
 configMapGenerator:
