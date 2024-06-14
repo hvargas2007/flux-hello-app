@@ -1,0 +1,37 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hello-app
+spec:
+  replicas: 1
+  revisionHistoryLimit: 3
+  selector:
+    matchLabels:
+      app: hello-app
+      component: hello-app
+  strategy:
+    type: RollingUpdate
+  template:
+    metadata:
+    spec:
+      containers:
+        - name: hello-app
+          image: jmanzur/hello-app:latest
+          imagePullPolicy: IfNotPresent
+          env:
+          - name: TARGET
+            valueFrom:
+              configMapKeyRef:
+                name: hello-app-cm
+                key: TARGET
+          securityContext:
+            allowPrivilegeEscalation: false
+            capabilities:
+              drop:
+                - ALL
+            runAsNonRoot: true
+            seccompProfile:
+              type: RuntimeDefault
+          ports:
+            - containerPort: 8883
