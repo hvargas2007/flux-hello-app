@@ -6,7 +6,7 @@ RUN pip install --upgrade pip
 RUN pip install flask
 COPY app.py /usr/src/app/
 
-ENV TARGET="Jhonnathan"
+ENV TARGET="hermes"
 
 EXPOSE 8883
 
